@@ -1,0 +1,24 @@
+
+
+.information-mainContents
+  .information-singleContent
+    .information-singleContent__head  新規登録
+    .informationInner
+      .informationInner__form
+        = form_for @user do |f|
+          = f.hidden_field :"uid", value: "#{session[:uid]}"
+          = f.hidden_field :"provider", value: "#{session[:provider]}"
+          = devise_error_messages!
+          .informationInner--label
+            %label.information{for: "name"} 名前         
+            = f.text_field :name, autofocus: true, class: "informationInput", type: "name", value: "#{session[:name]}"
+          .informationInner--label
+            %label.information{for: "email"} メールアドレス          
+            = f.email_field :"email", class: "informationInput", type: "email", autofocus: true, autocomplete: "email", value: "#{session[:email]}"
+          .informationInner--label
+            %label.information{for: "password"} パスワード          
+            = f.password_field :"password", class: "informationInput", type: "password", autofocus: true, value: ""
+          .informationInner--label
+            %label.information{for: "password_confirmation"} パスワード (確認)           
+            = f.password_field :"password_confirmation", class: "informationInput", type: "password", autofocus: true, value: ""
+          = f.submit "完了", class:  "information-btn"

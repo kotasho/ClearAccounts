@@ -1,0 +1,33 @@
+.header
+  .mainHeader
+    .mainHeader_inner  
+      ClearAccount
+      .mainHeader_inner_right
+        .newRegistrationTop
+          =link_to "users/sign_up" ,class:"mypage" do
+            新規登録
+        .loginTop
+          =link_to "users/sign_in" ,class:"mypage" do
+            ログイン
+        .logoutTop
+          =link_to "ログアウト", destroy_user_session_path, method: :delete
+        .mypageTop
+          =link_to "/users/#{current_user.id}", class:"mypage" do
+            マイページ
+
+.main-contents
+  .main-contents_incomes
+    =link_to "incomes" ,class:"incomes-btn" do
+      収入を入力する
+  .main-contents_spendings
+    =link_to "spendings" ,class:"spendings-btn" do
+      支出を入力する
+.side-contents
+  .side-contents_plan
+  今月の予算
+  200,000
+  .side-contents_current
+  現在の状況
+  15,000
+.main-contents-down
+  入力詳細表示

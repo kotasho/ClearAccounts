@@ -1,0 +1,54 @@
+// Place all the styles related to the books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.header {
+
+
+.mainHeader {
+  background: skyblue;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  &_inner {
+   font-size: 20px;
+   margin: 0, auto;
+  } 
+  &_inner_right {
+    text-align: center;
+  }
+}
+}
+
+.main-contents {
+float: left;
+position: relative;
+width: 80%;
+box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+height: 400px;
+&_incomes {
+ 
+ }
+&_spendings {
+
+ }
+}
+
+.side-contents {
+float: right;
+width: 20%;
+box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+height: 400px;
+  &_plan {
+  text-align: center;
+  }
+  &_current {
+  text-align: center;
+  }
+}
+
+.show-contents {
+  position: relative;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  
+}
