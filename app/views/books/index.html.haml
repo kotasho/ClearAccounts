@@ -3,17 +3,19 @@
     .mainHeader_inner  
       ClearAccount
       .mainHeader_inner_right
-        .newRegistrationTop
-          =link_to "users/sign_up" ,class:"mypage" do
-            新規登録
-        .loginTop
-          =link_to "users/sign_in" ,class:"mypage" do
-            ログイン
         .logoutTop
-          =link_to "ログアウト", destroy_user_session_path, method: :delete
-        .mypageTop
-          =link_to "/users/#{current_user.id}", class:"mypage" do
-            マイページ
+          - if user_signed_in?
+            =link_to "ログアウト", destroy_user_session_path, method: :delete
+          
+            =link_to "/users/#{current_user.id}", class:"mypage" do
+              マイページ
+          - else     
+            =link_to "users/sign_up" ,class:"mypage" do
+              新規登録
+
+            =link_to "users/sign_in" ,class:"mypage" do
+              ログイン       
+       
 
 .main-contents
   ようこそ#{@name}さん
