@@ -22,3 +22,9 @@ Category.create(category: "書籍")
 Category.create(category: "美容")
 Category.create(category: "スポーツ")
 Category.create(category: "定期購読")
+
+IncomeCategory.create(category: "給与")
+IncomeCategory.create(category: "賞与")
+IncomeCategory.create(category: "投資")
+IncomeCategory.create(category: "副業")
+

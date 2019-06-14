@@ -4,8 +4,12 @@ Rails.application.routes.draw do
   root 'books#index'
   resources :users, only: [:index]
   get 'users/:id'  => 'users#show'
+ 
   
-  get 'incomes' => 'incomes#index'
-  get 'spendings' => 'spendings#index'
-  
+  get 'spendings/new' => 'spendings#new'
+  post 'spendings' => 'spendings#create'
+
+  get 'incomes/new' => 'incomes#new'
+  post 'incomes' => 'incomes#create'
+ 
 end

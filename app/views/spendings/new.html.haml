@@ -1,0 +1,16 @@
+.contents.row
+  = form_tag('/spendings', method: :post) do
+    .title-header
+      .title
+        支出入力
+.spending-main
+  .date
+    %input{:name => "date", :placeholder => "日付", :type => "date"}/
+  .categories
+    %input{:name => "category_id", :placeholder => "カテゴリー", :type => "category"}/
+  .amount
+    %input{:name => "amount", :placeholder => "金額", :type => "amount"}/
+  .completed
+    %input{:type => "submit", :value => "完了"}/
+　  
+
