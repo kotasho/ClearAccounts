@@ -25,12 +25,12 @@ float: left;
 position: relative;
 width: 80%;
 box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-height: 400px;
+height: 600px;
 &_incomes {
- 
+  font-size: 20px;
  }
 &_spendings {
-
+  font-size: 20px;
  }
 }
 
@@ -38,7 +38,7 @@ height: 400px;
 float: right;
 width: 20%;
 box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-height: 400px;
+height: 600px;
   &_plan {
   text-align: center;
   }
@@ -47,8 +47,3 @@ height: 400px;
   }
 }
 
-.show-contents {
-  position: relative;
-  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-  
-}
