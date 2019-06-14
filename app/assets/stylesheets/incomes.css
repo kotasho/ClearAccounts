@@ -2,3 +2,34 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+.title-header {
+  background: skyblue;
+  height: 100px;
+}
+
+.title {
+  font-size: 30px;
+  text-align: center;
+}
+
+.incomes-main {
+  
+}
+
+.date {
+  font-size: 30px;
+}
+
+.categories {
+  font-size: 30px;
+}
+
+.amount {
+  font-size: 30px;
+}
+
+.completed-btn {
+ 
+
+}

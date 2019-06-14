@@ -16,11 +16,12 @@
             マイページ
 
 .main-contents
+  ようこそ#{@name}さん
   .main-contents_incomes
-    =link_to "incomes" ,class:"incomes-btn" do
+    =link_to "incomes/new" ,class:"incomes-btn" do
       収入を入力する
   .main-contents_spendings
-    =link_to "spendings" ,class:"spendings-btn" do
+    =link_to "spendings/new" ,class:"spendings-btn" do
       支出を入力する
 .side-contents
   .side-contents_plan
@@ -29,5 +30,3 @@
   .side-contents_current
   現在の状況
   15,000
-.main-contents-down
-  入力詳細表示
