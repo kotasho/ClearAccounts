@@ -1,0 +1,34 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+
+.header {
+background: skyblue;
+}
+ 
+.title {
+  font-size: 30px;
+  text-align: center;
+}
+
+.select-year {
+  font-size: 30px;
+}
+
+.select-month {
+  font-size: 30px;
+}
+
+.income-budget {
+  font-size: 30px;
+}
+
+.spending-budget {
+  font-size: 30px;
+}
+
+
+
+

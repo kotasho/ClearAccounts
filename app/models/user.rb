@@ -6,5 +6,6 @@ class User < ApplicationRecord
   
  has_many :incomes
  has_many :spendings
+ has_many :budgets
          
 end

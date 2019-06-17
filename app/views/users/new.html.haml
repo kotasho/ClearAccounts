@@ -1,0 +1,16 @@
+.contents.row
+  = form_tag('/users/new', method: :post) do
+    .title-header
+      .title
+        予算設定
+    .budget-main
+      .select-year
+        %input{:name => "year", :placeholder => "年", :type => "year"}/
+      .select-month
+        %input{:name => "month", :placeholder => "月", :type => "integer"}/
+      .income-budget
+        %input{:name => "income_amount", :placeholder => "収入予算", :type => "income_amount"}/
+      .spending-budget
+        %input{:name => "spending_amount", :placeholder => "支出予算", :type => "spending_amount"}/
+      .completed
+        %input{:type => "submit", :value => "完了"}/
