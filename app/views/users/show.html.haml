@@ -1,1 +1,21 @@
-マイページ
+.header
+  .title
+    #{@name}さんのページ
+
+.mypage-contents
+  .mypage-contents_edit
+    .new-settig-btn
+      =link_to "new" ,class:"new-setting-btn" do
+        設定
+  .mypage-contents_analyse
+    .select-month
+      .analyze 
+        見たい年・月を選択してください
+        .analyze_list
+          一覧でデータ表示
+        .analyze_income_chart 
+          = pie_chart @income_chart
+        .analyze_spending_chart
+          = pie_chart @spending_chart
+   
+ 
