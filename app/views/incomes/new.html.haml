@@ -1,15 +1,38 @@
-.contents.row
-  = form_tag('/incomes', method: :post) do
-    .title-header
-      .title
-        収入入力
-    .spending-main
-      .date
-        %input{:name => "date", :placeholder => "日付", :type => "date"}/
-      .categories
-        %input{:name => "category_id", :placeholder => "カテゴリー", :type => "category"}/
-      .amount
-        %input{:name => "amount", :placeholder => "金額", :type => "amount"}/
-      .completed
-        %input{:type => "submit", :value => "完了"}/
+-# .contents.row
+-#   = form_tag('/incomes', method: :post) do
+-#     .title-header
+-#       .title
+-#         収入入力
+-#     .spending-main
+-#       .date
+-#         %input{:name => "date", :placeholder => "日付", :type => "date"}/
+-#       .categories
+-#         %input{:name => "category_id", :placeholder => "カテゴリー", :type => "category"}/
+-#       .amount
+-#         %input{:name => "amount", :placeholder => "金額", :type => "amount"}/
+-#       .completed
+-#         %input{:type => "submit", :value => "完了"}/
 　  
+
+%main.income-main
+  %section.income-main__container
+    %h2.income-main__container--header 収入入力
+
+    .income-inner
+      = form_for @income do |f|
+        .income-inner_contents
+          .date
+            = f.label '日付', class: 'registration_font'
+            .income__content__form--error
+            = f.text_field :date, class: 'input-default', placeholder: '日付を選択', :type => "date", value: ""
+          .category
+            = f.label 'カテゴリー', class: 'registration_font'          
+            .income__content__form--error             
+            = f.collection_select :Income_categories_id, @income_categories, :id, :category 
+          .amount
+            = f.label '金額', class: 'registration_font'
+            .income__content__form--error
+            = f.text_field :amount, class: 'input-default', placeholder: '金額を入力', :type => "amount", value: ""
+          .completed-btn
+            = f.submit "完了", class: "completed-btn", :type => "submit"
+
