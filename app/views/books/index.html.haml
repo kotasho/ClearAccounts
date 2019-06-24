@@ -29,9 +29,27 @@
     =link_to "books/show" ,class:"todays-information-btn" do
       今日の内容を見る
 .side-contents
-  .side-contents_plan
-  今月の予算
-  200,000
-  .side-contents_current
-  現在の状況
-  15,000
+  .side-contents_budget
+    .side-contents_budget_income
+      今月の収入予算
+      = @income_budget.to_s(:delimited)
+      円 
+      .current_income
+        現在の状況
+        = @current_income_view.to_s(:delimited)
+        円
+        
+    .side-conyents_budget_spending
+      今月の支出予算
+      = @spending_budget.to_s(:delimited)
+      円
+      .current_spending
+        現在の状況
+        = @current_spending_view.to_s(:delimited)
+        円
+-#   .side-contents_current
+-#     .side-contents_current_income
+-# 　    現在の収入
+-#     .side-contents_current_income
+-#       現在の支出
+ 

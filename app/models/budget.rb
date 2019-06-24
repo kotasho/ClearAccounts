@@ -1,3 +1,3 @@
 class Budget < ApplicationRecord
-  # belongs_to :users
+  belongs_to :users
 end
