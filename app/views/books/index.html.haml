@@ -38,6 +38,11 @@
         現在の状況
         = @current_income_view.to_s(:delimited)
         円
+      .income_difference
+        差額
+        = (@income_budget-@current_income_view) * -1
+        -# 収入予算より実績が上回っていたら計算式ではマイナスだが、会計上はプラスなので*-1して反転
+        円
         
     .side-conyents_budget_spending
       今月の支出予算
@@ -47,9 +52,13 @@
         現在の状況
         = @current_spending_view.to_s(:delimited)
         円
--#   .side-contents_current
--#     .side-contents_current_income
--# 　    現在の収入
--#     .side-contents_current_income
--#       現在の支出
- 
+      .spending_difference
+        差額
+        = @spending_budget-@current_spending_view
+        円
+      .total
+        収支
+        = @current_income_view - @current_spending_view
+        円（今月の収入額-今月の支出額状況）
+        
+
