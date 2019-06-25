@@ -1,0 +1,21 @@
+.header
+  .title
+    #{@name}さんのページ
+
+.mypage-contents
+  .mypage-contents_edit
+    .new-settig-btn
+      =link_to "new" ,class:"new-setting-btn" do
+        設定
+.mypage-contents_analyse
+  .select-year_and_month
+    .income_inner
+      = form_tag('/users/show/:id', method: :post) do
+        .detail-main
+          詳細を検索
+          .select-year
+            %input{:name => "year", :placeholder => "年", :type => "year"}/
+          .select-month
+            %input{:name => "month", :placeholder => "月", :type => "integer"}/
+          .start_to_search
+            %input{:type => "submit", :value => "検索"}/

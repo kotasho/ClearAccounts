@@ -1,21 +1,28 @@
-.header
-  .title
-    #{@name}さんのページ
-
-.mypage-contents
-  .mypage-contents_edit
-    .new-settig-btn
-      =link_to "new" ,class:"new-setting-btn" do
-        設定
-  .mypage-contents_analyse
-    .select-month
-      .analyze 
-        見たい年・月を選択してください
-        .analyze_list
-          =  @income_budget
-        .analyze_income_chart 
-          = pie_chart @income_chart
-        .analyze_spending_chart
-          = pie_chart @spending_chart
-   
+.detail-list
+  .income_list
+    収入
+    .income_list_saraly
+      給与:
+      = @income_detail_saraly_view.to_s(:delimited)
+      円
+    .income_list_bonus
+      賞与:
+      = @income_detail_bonus_view.to_s(:delimited)
+      円
+    .income_list_investment
+      投資:
+      = @income_detail_investment_view.to_s(:delimited)
+      円
+    .income_list_sub
+      副業:
+      = @income_detail_sub_view.to_s(:delimited)
+      円
+    .income_detail_sum
+      合計:
+      = @income_detail_total_view.to_s(:delimited)
+      円
+.chart
+  .income_chart
+    = pie_chart @income_chart
+     
  
