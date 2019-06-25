@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   root 'books#index'
   get 'books/:id/' => 'books#show'
   resources :users, only: [:index, :new, :create]
-  get 'users/:id/'  => 'users#show'
+  get 'users/:id/'  => 'users#index'
+  post 'users/:id(/:name)' => 'users#show'
   get 'users/:id/new' => 'users#new'
+  get 'users/:id/'  => 'users#show'
   post 'users/:id' => 'users#create'
   
   
