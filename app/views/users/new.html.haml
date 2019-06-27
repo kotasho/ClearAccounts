@@ -1,8 +1,12 @@
+.header
+  .mainHeader
+    .mainHeader_inner  
+      =link_to (ClearAccounts),root_path
+    .title-header 予算設定
+
 .contents.row
   = form_tag('/users/new', method: :post) do
-    .title-header
-      .title
-        予算設定
+    
     .budget-main
       .select-year
         %input{:name => "year", :placeholder => "年", :type => "year"}/
