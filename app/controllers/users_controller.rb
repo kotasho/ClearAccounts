@@ -36,8 +36,9 @@ class UsersController < ApplicationController
     @income_detail_total[[@search_year.to_i, @search_month.to_i]]
     @income_detail_total_view = @income_detail_total[[@search_year.to_i, @search_month.to_i]]
     
-     @income_chart = ["給与", @income_detail_total_view], ["賞与", @income_detail_bonus_view],["投資", @income_detail_investment_view],["副業", @income_detail_sub_view]
+    @income_chart = ["給与", @income_detail_total_view], ["賞与", @income_detail_bonus_view],["投資", @income_detail_investment_view],["副業", @income_detail_sub_view]
     
+     
     # binding.pry
    
 

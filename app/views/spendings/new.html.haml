@@ -16,7 +16,11 @@
 -# -# 　  
 
 .header
-  .title-header 支出入力
+  .mainHeader
+    .mainHeader_inner  
+      =link_to (ClearAccounts),root_path
+    .title-header 支出入力
+
 .spending-inner
   = form_for @spending do |f|
     .spending-inner_contents
