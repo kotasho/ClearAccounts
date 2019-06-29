@@ -5,7 +5,7 @@
     .title-header 予算設定
 
 .contents.row
-  = form_tag('/users/new', method: :post) do
+  = form_tag('/users/:id/edit', method: :post) do
     
     .budget-main
       .select-year

@@ -9,7 +9,10 @@
   .mypage-contents_edit
     .new-settig-btn
       =link_to "new" ,class:"new-setting-btn" do
-        設定
+        予算を設定
+    .new-settig-btn
+      =link_to ":id/edit" ,class:"edit-btn" do
+        予算を変更
 .mypage-contents_analyse
   .select-year_and_month
     .income_inner

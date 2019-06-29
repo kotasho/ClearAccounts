@@ -1,27 +1,13 @@
--# .contents.row
--#   = form_tag('/incomes', method: :post) do
--#     .title-header
--#       .title
--#         収入入力
--#     .spending-main
--#       .date
--#         %input{:name => "date", :placeholder => "日付", :type => "date"}/
--#       .categories
--#         %input{:name => "category_id", :placeholder => "カテゴリー", :type => "category"}/
--#       .amount
--#         %input{:name => "amount", :placeholder => "金額", :type => "amount"}/
--#       .completed
--#         %input{:type => "submit", :value => "完了"}/
-　  
 .header
   .mainHeader
     .mainHeader_inner  
       =link_to (ClearAccounts),root_path
     .title-header 支出入力
 
+-# 以下３行いらないので消し、その下の行以下のインデントを揃える
 %main.income-main
   %section.income-main__container
-    %h2.income-main__container--header 収入入力
+    %h2.income-main__container--header 
 
     .income-inner
       = form_for @income do |f|
