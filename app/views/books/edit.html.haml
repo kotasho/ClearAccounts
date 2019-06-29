@@ -1,0 +1,24 @@
+.header
+  .mainHeader
+    .mainHeader_inner  
+      =link_to (ClearAccounts),root_path
+    .title-header 今日の内容
+
+.income_inner
+  = form_tag('/users/edit/:id', method: :patch) do
+    .detail-main
+      詳細を検索
+      .select-year
+        %input{:name => "year-detail", :placeholder => "年", :type => "year"}/
+      .select-month
+        %input{:name => "month-detail", :placeholder => "月", :type => "integer"}/
+      .select-date
+        %input{:name => "day-detail", :placeholder => "日", :type => "integer"}/
+      .start_to_search
+        %input{:type => "submit", :value => "表示"}/
+
+
+.income-edit
+
+
+.spending-edit

@@ -16,23 +16,23 @@ class UsersController < ApplicationController
 
     
     #収入計算
-    @income_detail_saraly = Income.group("YEAR(date)").group("MONTH(date)").where(income_categories_id: 1).sum(:amount)
+    @income_detail_saraly = Income.group("YEAR(date)").group("MONTH(date)").where(income_categories_id: 1, user_id: current_user.id).sum(:amount)
     @income_detail_saraly[[@search_year.to_i, @search_month.to_i]]
     @income_detail_saraly_view = @income_detail_saraly[[@search_year.to_i, @search_month.to_i]]
    
-    @income_detail_bonus = Income.group("YEAR(date)").group("MONTH(date)").where(income_categories_id: 2).sum(:amount)
+    @income_detail_bonus = Income.group("YEAR(date)").group("MONTH(date)").where(income_categories_id: 2, user_id: current_user.id).sum(:amount)
     @income_detail_bonus[[@search_year.to_i, @search_month.to_i]]
     @income_detail_bonus_view = @income_detail_bonus[[@search_year.to_i, @search_month.to_i]]
     
-    @income_detail_investment = Income.group("YEAR(date)").group("MONTH(date)").where(income_categories_id: 3).sum(:amount)
+    @income_detail_investment = Income.group("YEAR(date)").group("MONTH(date)").where(income_categories_id: 3, user_id: current_user.id).sum(:amount)
     @income_detail_investment[[@search_year.to_i, @search_month.to_i]]
     @income_detail_investment_view = @income_detail_investment[[@search_year.to_i, @search_month.to_i]]
     
-    @income_detail_sub = Income.group("YEAR(date)").group("MONTH(date)").where(income_categories_id: 4).sum(:amount)
+    @income_detail_sub = Income.group("YEAR(date)").group("MONTH(date)").where(income_categories_id: 4, user_id: current_user.id).sum(:amount)
     @income_detail_sub[[@search_year.to_i, @search_month.to_i]]
     @income_detail_sub_view = @income_detail_sub[[@search_year.to_i, @search_month.to_i]]
    
-    @income_detail_total = Income.group("YEAR(date)").group("MONTH(date)").sum(:amount)
+    @income_detail_total = Income.group("YEAR(date)").group("MONTH(date)").where(user_id: current_user.id).sum(:amount)
     @income_detail_total[[@search_year.to_i, @search_month.to_i]]
     @income_detail_total_view = @income_detail_total[[@search_year.to_i, @search_month.to_i]]
     

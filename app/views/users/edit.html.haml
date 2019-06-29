@@ -1,1 +1,17 @@
-設定ページ
+.header
+  .mainHeader
+    .mainHeader_inner  
+      =link_to (ClearAccounts),root_path
+    .title-header 予算の変更
+
+.contents.row
+  = form_tag('/users/edit', method: :post) do
+    
+    .budget-main
+      .select-year
+        %input{:name => "year", :placeholder => "年", :type => "year"}/
+      .select-month
+        %input{:name => "month", :placeholder => "月", :type => "integer"}/
+      
+      .completed
+        %input{:type => "submit", :value => "表示"}/
