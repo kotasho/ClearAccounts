@@ -1,0 +1,52 @@
+.detail-list-income {
+  height: 450px;
+  border-bottom: 1px solid gray;
+  .income_list {
+   margin-top: 30px;
+   font-size: 25px;
+   width: 30%;
+   float: left;
+   .income_title{
+    font-weight: bold;
+    font-size: 30px;
+   }
+   .income_detail_sum {
+    font-weight: bold;
+    font-size: 30px;
+   }
+  }
+    .income_chart{
+      margin-top: 50px;
+      width: 70%;   
+      float: right;
+      // position: relative;   
+  }
+}
+
+.detail-list-spending{
+
+
+  .spending_list {
+    margin-top: 30px;
+    font-size: 25px;
+    width: 30%;
+    float: left;
+    .spending_title{
+      font-weight: bold;
+      font-size: 30px;
+     }
+    .spending_detail_sum {
+      font-weight: bold;
+      font-size: 30px;
+     }
+  }
+    .spending_chart{
+      margin-top: 100px;  
+      width: 70%; 
+      float: right;  
+      .canvas {
+        size: 300px;
+      }
+      // position: relative;   
+  }
+}

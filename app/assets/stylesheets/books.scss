@@ -6,15 +6,17 @@
 
 .header {
 
-
 .mainHeader {
   background: skyblue;
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
   &_inner {
-   font-size: 20px;
+   font-size: 35px;
    margin: 0, auto;
+   
   } 
-  &_inner_right {
+  .topList {
+   
+    font-size: 20px;
     text-align: center;
   }
 }
@@ -23,27 +25,73 @@
 .main-contents {
 float: left;
 position: relative;
-width: 70%;
-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-height: 600px;
+width: 60%;
+// box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+
+.message{
+  font-size: 25px;
+  height: 80px;
+  margin-top: 20px;
+}
 &_incomes {
-  font-size: 20px;
+  font-size: 30px;
+  height: 80px;
  }
 &_spendings {
-  font-size: 20px;
+  font-size: 30px;
+  height: 80px;
+ }
+ &_information {
+  font-size: 30px;
+  height: 60px;
  }
 }
 
 .side-contents {
 float: right;
-width: 30%;
-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-height: 600px;
-  &_plan {
-  text-align: center;
+width: 40%;
+// box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+
+.which-month {
+  padding: 10px;
+  border: 1px solid black;;
+  height: 30px;
+}
+  &_budget {
+  font-size: 25px;
+  .side-contents_budget_income {
+   padding: 10px;
+   border: 1px solid black;;
+   height: 180px;
+   .this-month_budget_income {
+     height: 50px;
+   }
+   .current_income {
+    height: 50px;
+   }
+   .income_difference {
+     font-weight: bold;
+   }
   }
-  &_current {
-  text-align: center;
+  .side-contents_budget_spending{
+   padding: 10px;
+   border: 1px solid black;;
+   height: 180px;
+   .this-month_budget_spendings {
+    height: 50px;
+   }
+   .current_spending {
+    height: 50px;
+   }
+   .spending_difference {
+    font-weight: bold;
+   }
+  }
+  .total {
+   padding: 10px;
+   font-weight: bold;
+  //  border: 1px solid #ccc;;
+  }
   }
 }
 

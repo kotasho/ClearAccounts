@@ -1,0 +1,48 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+
+.mypage-contents {
+  height: 200px;
+  margin-top: 20px;
+  .new-settig-btn {
+    font-size: 30px;
+    height: 80px;
+  }
+}
+
+.mypage-contents_analyse {
+
+  .detail-main {
+    font-size: 25px;
+    .select-year {
+      width: 200px;
+      height: 50px;
+      input {
+        width: 200px;
+        height: 30px;
+        font-size: 20px;
+      }
+    }
+    .select-month {
+      width: 200px;
+      height: 50px;
+      input {
+        width: 200px;
+        height: 30px;
+        font-size: 20px;
+      }
+    }
+    .start_to_search {
+      width: 200px;
+      height: 50px;
+      input {
+        width: 150px;
+        height: 30px;
+        font-size: 20px;
+    }
+  }
+}
+}
