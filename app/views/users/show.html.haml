@@ -6,30 +6,79 @@
       #{@search_year}年#{@search_month}月の詳細
 
 .detail-list
-  .income_list
-    収入
-    .income_list_saraly
-      給与:
-      = @income_detail_saraly_view.to_s(:delimited)
-      円
-    .income_list_bonus
-      賞与:
-      = @income_detail_bonus_view.to_s(:delimited)
-      円
-    .income_list_investment
-      投資:
-      = @income_detail_investment_view.to_s(:delimited)
-      円
-    .income_list_sub
-      副業:
-      = @income_detail_sub_view.to_s(:delimited)
-      円
-    .income_detail_sum
-      合計:
-      = @income_detail_total_view.to_s(:delimited)
-      円
-.chart
-  .income_chart
-    = pie_chart @income_chart
-     
- 
+  .detail-list-income
+    .income_list
+      .income_title
+        収入
+      .income_list_saraly
+        給与:
+        = number_to_currency(@income_detail_saraly_view.to_s(:delimited), :unit => "￥")
+      .income_list_bonus
+        賞与:
+        = number_to_currency(@income_detail_bonus_view.to_s(:delimited), :unit => "￥")
+      .income_list_investment
+        投資:
+        = number_to_currency(@income_detail_investment_view.to_s(:delimited), :unit => "￥")
+      .income_list_sub
+        副業:
+        = number_to_currency(@income_detail_sub_view.to_s(:delimited), :unit => "￥")
+      .income_detail_sum
+        合計:
+        = number_to_currency(@income_detail_total_view.to_s(:delimited), :unit => "￥")
+    .income_chart
+      = pie_chart @income_chart
+
+  .detail-list-spending
+    .spending_list
+      .spending_title
+        支出
+      .spending_list_home
+        家賃:
+        = number_to_currency(@spending_detail_home_view.to_s(:delimited), :unit => "￥")
+      .spending_list_utility
+        水道光熱費:
+        = number_to_currency(@spending_detail_utility_view.to_s(:delimited), :unit => "￥")
+      .spending_list_food
+        食費:
+        = number_to_currency(@spending_detail_food_view.to_s(:delimited), :unit => "￥")
+      .spending_list_trafic
+        交通費:
+        = number_to_currency(@spending_detail_trafic_view.to_s(:delimited), :unit => "￥")
+      .spending_list_cloth
+        衣類:
+        = number_to_currency(@spending_detail_cloth_view.to_s(:delimited), :unit => "￥")
+      .spending_list_daily
+        日用品:
+        = number_to_currency(@spending_detail_daily_view.to_s(:delimited), :unit => "￥")
+      .spending_list_education
+        交通費:
+        = number_to_currency(@spending_detail_education_view.to_s(:delimited), :unit => "￥")
+      .spending_list_leisure
+        レジャー:
+        = number_to_currency(@spending_detail_leisure_view.to_s(:delimited), :unit => "￥")
+      .spending_list_insurence
+        保険:
+        = number_to_currency(@spending_detail_insurence_view.to_s(:delimited), :unit => "￥")
+      .spending_list_device
+        通信費:
+        = number_to_currency(@spending_detail_device_view.to_s(:delimited), :unit => "￥")
+      .spending_list_investment
+        投資:
+        = number_to_currency(@spending_detail_investment_view.to_s(:delimited), :unit => "￥")
+      .spending_list_books
+        書籍:
+        = number_to_currency(@spending_detail_books_view.to_s(:delimited), :unit => "￥")
+      .spending_list_beauty
+        美容:
+        = number_to_currency(@spending_detail_beauty_view.to_s(:delimited), :unit => "￥")
+      .spending_list_home
+        スポーツ:
+        = number_to_currency(@spending_detail_sports_view.to_s(:delimited), :unit => "￥")
+      .spending_list_home
+        定期購読:
+        = number_to_currency(@spending_detail_read_view.to_s(:delimited), :unit => "￥")
+      .spending_detail_sum
+        合計:
+        = number_to_currency(@spending_detail_total_view.to_s(:delimited), :unit => "￥")
+    .spending_chart
+      = pie_chart @spending_chart

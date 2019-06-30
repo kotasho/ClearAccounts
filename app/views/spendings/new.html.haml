@@ -9,15 +9,15 @@
     .spending-inner_contents
       .spending-inner_contents__date
         %label.information{for: "date"} 日付       
-        .spending__content__form--error
+        .spending__content__form
         = f.text_field :date, class: 'date', placeholder: '日付を選択', :type => "date", value: ""
       .spending-inner_contents__category
         = f.label 'カテゴリー', class: 'category_id'          
-        .spending__content__form--error       
+        .spending__content__form       
         = f.collection_select :category_id, @categories, :id, :category, {include_blank: "---"} ,class: "category_id"   
       .spending-inner_contents__amount
         = f.label '金額', class: 'amount'
-        .spending__content__form--error
+        .spending__content__form
         = f.text_field :amount, class: 'amount', placeholder: '金額を入力', :type => "amount"
       .completed-btn
-        = f.submit "完了", class: "completed-btn", :type => "submit"
+        = f.submit "完了", class: "btn", :type => "submit"

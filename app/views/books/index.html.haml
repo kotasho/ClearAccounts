@@ -1,64 +1,64 @@
 .header
   .mainHeader
     .mainHeader_inner  
-      ClearAccount
-      .mainHeader_inner_right
-        .logoutTop
-          - if user_signed_in?
-            =link_to "ログアウト", destroy_user_session_path, method: :delete
+      ClearAccount   
+      .topList
+        - if user_signed_in?
+          =link_to "ログアウト", destroy_user_session_path, method: :delete
           
-            =link_to "/users/#{current_user.id}", class:"mypage" do
-              マイページ
-          - else     
-            =link_to "users/sign_up" ,class:"mypage" do
-              新規登録
+          =link_to "/users/#{current_user.id}", class:"mypage" do
+            マイページ
+        - else     
+          =link_to "users/sign_up" ,class:"mypage" do
+            新規登録
 
-            =link_to "users/sign_in" ,class:"mypage" do
-              ログイン       
+          =link_to "users/sign_in" ,class:"mypage" do
+            ログイン       
        
 
 .main-contents
-  ようこそ#{@name}さん
+  .message
+    ようこそ#{@name}さん
   .main-contents_incomes
+    .main-contents_incomes_link
     =link_to "incomes/new" ,class:"incomes-btn" do
       収入を入力する
   .main-contents_spendings
+    .main-contents_spendings_link
     =link_to "spendings/new" ,class:"spendings-btn" do
       支出を入力する
-  .todays-information
+  .main-contents_information
     =link_to "books/:id/edit" ,class:"todays-information-btn" do
       日付を検索して編集
 .side-contents
   .side-contents_budget
+    .which-month
+      #{@this_year}年#{@this_month}月の設定額と状況
     .side-contents_budget_income
-      今月の収入予算
-      = @income_budget.to_s(:delimited)
-      円 
+      .this-month_budget_income
+        収入予算:
+        = number_to_currency(@income_budget.to_s(:delimited), :unit => "￥") 
       .current_income
-        現在の状況
-        = @current_income_view.to_s(:delimited)
-        円
+        現在の状況: 
+        = number_to_currency(@current_income_view.to_s(:delimited), :unit => "￥")
       .income_difference
-        差額
-        = (@income_budget-@current_income_view) * -1
+        差額:
+        = number_to_currency((@income_budget - @current_income_view) * -1, :unit => "￥")
         -# 収入予算より実績が上回っていたら計算式ではマイナスだが、会計上はプラスなので*-1して反転
-        円
         
-    .side-conyents_budget_spending
-      今月の支出予算
-      = @spending_budget.to_s(:delimited)
-      円
+    .side-contents_budget_spending
+      .this-month_budget_spendings
+        支出予算:
+        = number_to_currency(@spending_budget.to_s(:delimited), :unit => "￥")
       .current_spending
-        現在の状況
-        = @current_spending_view.to_s(:delimited)
-        円
+        現在の状況:
+        = number_to_currency(@current_spending_view.to_s(:delimited), :unit => "￥")
       .spending_difference
-        差額
-        = @spending_budget-@current_spending_view
-        円
-      .total
-        収支
-        = @current_income_view - @current_spending_view
-        円（今月の収入額-今月の支出額状況）
+        差額:
+        = number_to_currency((@spending_budget-@current_spending_view), :unit => "￥")
+    .total
+      収支:
+      = number_to_currency((@current_income_view - @current_spending_view), :unit => "￥")
+      -# (今月の収入額-今月の支出額状況）
         
 

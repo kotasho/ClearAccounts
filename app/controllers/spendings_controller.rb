@@ -11,7 +11,7 @@ class SpendingsController < ApplicationController
 
   def create
     @spending = Spending.create(date: spending_params[:date], category_id: spending_params[:category_id], amount: spending_params[:amount], user_id: current_user.id) 
-    binding.pry
+    # binding.pry
   end
 
   private

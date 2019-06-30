@@ -2,28 +2,28 @@
   .mainHeader
     .mainHeader_inner  
       =link_to (ClearAccounts),root_path
-    .title-header 支出入力
+    .title-header 収入入力
 
 -# 以下３行いらないので消し、その下の行以下のインデントを揃える
 %main.income-main
   %section.income-main__container
-    %h2.income-main__container--header 
+    
 
     .income-inner
       = form_for @income do |f|
         .income-inner_contents
           .date
             = f.label '日付', class: 'registration_font'
-            .income__content__form--error
+            .income__content__form
             = f.text_field :date, class: 'input-default', placeholder: '日付を選択', :type => "date", value: ""
-          .category
+          .categories
             = f.label 'カテゴリー', class: 'registration_font'          
-            .income__content__form--error             
-            = f.collection_select :Income_categories_id, @income_categories, :id, :category 
+            .income__content__form             
+            = f.collection_select :Income_categories_id, @income_categories, :id, :category, include_blank: "---"
           .amount
             = f.label '金額', class: 'registration_font'
-            .income__content__form--error
+            .income__content__form
             = f.text_field :amount, class: 'input-default', placeholder: '金額を入力', :type => "amount", value: ""
           .completed-btn
-            = f.submit "完了", class: "completed-btn", :type => "submit"
+            = f.submit "完了", class: "btn", :type => "submit"
 

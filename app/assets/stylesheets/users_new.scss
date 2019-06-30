@@ -1,0 +1,75 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+
+.header {
+background: skyblue;
+}
+ 
+.title {
+  font-size: 30px;
+  text-align: center;
+}
+
+.select-year {
+  font-size: 30px;
+  height: 70px;
+  margin-top: 20px;
+  input {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    border: 1px solid gray;;
+  }
+}
+
+.select-month {
+  font-size: 30px;
+  height: 70px;
+  input {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    border: 1px solid gray;;
+  }
+}
+
+.income-budget {
+  font-size: 30px;
+  height: 70px;
+  input {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    border: 1px solid gray;;
+  }
+}
+
+.spending-budget {
+  font-size: 30px;
+  height: 70px;
+  input {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    border: 1px solid gray;;
+  }
+}
+
+.completed {
+  width: 200px;
+  height: 50px;
+  input {
+    width: 150px;
+    font-size: 20px;
+    height: 30px;
+    border: 1px solid gray;;
+    border-radius: 0.3em;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+       
+    }
+}
+
+
