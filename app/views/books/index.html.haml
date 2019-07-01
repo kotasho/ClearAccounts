@@ -37,25 +37,47 @@
     .side-contents_budget_income
       .this-month_budget_income
         収入予算:
-        = number_to_currency(@income_budget.to_s(:delimited), :unit => "￥") 
+        -if @income_budget == nil
+          予算は設定されていません
+        -else
+          = number_to_currency(@income_budget.to_s(:delimited), :unit => "￥") 
       .current_income
         現在の状況: 
-        = number_to_currency(@current_income_view.to_s(:delimited), :unit => "￥")
+        -if @current_income_view == nil
+          ¥0
+        -else
+          = number_to_currency(@current_income_view.to_s(:delimited), :unit => "￥")
+      
       .income_difference
+        -# もし予算が設定されていなければ、現在の状況をそのまま表示する
         差額:
-        = number_to_currency((@income_budget - @current_income_view) * -1, :unit => "￥")
+        -if @income_budget == nil
+          = number_to_currency(@current_income_view.to_s(:delimited), :unit => "￥")
+        -else
+          = number_to_currency((@income_budget - @current_income_view) * -1, :unit => "￥")
         -# 収入予算より実績が上回っていたら計算式ではマイナスだが、会計上はプラスなので*-1して反転
         
     .side-contents_budget_spending
       .this-month_budget_spendings
         支出予算:
-        = number_to_currency(@spending_budget.to_s(:delimited), :unit => "￥")
+        -if @spending_budget == nil
+          予算は設定されていません
+        -else
+          = number_to_currency(@spending_budget.to_s(:delimited), :unit => "￥")
       .current_spending
         現在の状況:
-        = number_to_currency(@current_spending_view.to_s(:delimited), :unit => "￥")
-      .spending_difference
+        -if @current_spending_view == nil
+          ¥0
+        -else
+          = number_to_currency(@current_spending_view.to_s(:delimited), :unit => "￥")
+      
+      .spending_difference     
+        -# もし予算が設定されていなければ、現在の状況をそのまま表示する
         差額:
-        = number_to_currency((@spending_budget-@current_spending_view), :unit => "￥")
+        -if @spending_budget ==  nil
+          = number_to_currency(@current_spending_view.to_s(:delimited), :unit => "￥")
+        -else
+          = number_to_currency((@spending_budget - @current_spending_view), :unit => "￥")
     .total
       収支:
       = number_to_currency((@current_income_view - @current_spending_view), :unit => "￥")
